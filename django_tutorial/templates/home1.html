@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnNj2UbKgE5Khbjc588cVhS077Ru4P3nMUWw&s);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        
+        }
+</style>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: #f8f9fa;">
+
+    <div class="container text-center p-5" style="max-width: 500px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+
+        
+
+        {% if user.is_authenticated %}
+            <h3> Hello, {{user.username}} </h3>
+
+        {% endif %}
+        
+        <h4>Your are successfully logged in 🎉</h4>
+
+
+        <div class="mt-4">
+            <a href="{% url 'signout' %}" class="btn btn-danger">Sign Out</a>
+        </div>
+        
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
